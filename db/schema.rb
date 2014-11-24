@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(version: 20140225163338) do
     t.integer  "user_id"
     t.string   "title"
     t.string   "url"
+    t.integer  "comments_count"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "score",      default: 0
+    t.integer  "score",          default: 0
   end
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140225163338) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "articles_count"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
