@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
   include Votable
-  belongs_to :user
+  belongs_to :user, counter_cache: true
   has_many :comments
 
   validates :title, presence: true
