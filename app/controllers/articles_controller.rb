@@ -2,7 +2,9 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @articles = Article.order(score: :desc)
+    # @articles = Article.order(score: :desc)
+    # Optimizing query - using 'include' to eager load user
+    @articles = Article.includes(:user).order(score: :desc)
   end
 
   def new
