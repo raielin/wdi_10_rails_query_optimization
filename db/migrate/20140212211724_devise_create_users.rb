@@ -32,6 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
 
       t.timestamps
+      t.integer :articles_count
     end
 
     add_index :users, :email,                :unique => true
