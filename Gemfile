@@ -21,6 +21,7 @@ gem 'spring', group: :development
 gem 'devise'
 gem 'validate_url'
 gem 'factory_girl_rails'
+gem 'factory_girl'
 gem 'faker'
 
 group :development, :test do
